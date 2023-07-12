@@ -8,8 +8,8 @@ const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-west-2' });
 
 // Get AWS credentials.
-const credentials = new AWS.SharedIniFileCredentials({ profile: 'default' });
-
+// const credentials = new AWS.SharedIniFileCredentials({ profile: 'default' });
+const credentials = new AWS.EnvironmentCredentials('AWS');
 // Set AWS credentials.
 AWS.config.credentials = credentials;
 
